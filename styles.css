@@ -75,7 +75,7 @@ body {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-size:17px;
+	font-size:25px;
 }
 
 .operation-button {
@@ -86,7 +86,7 @@ body {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-size:17px;
+	font-size:20px;
 }
 
 .digit-button {
@@ -97,7 +97,7 @@ body {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-size:17px;
+	font-size:25px;
 }
 
 #equal {
@@ -108,7 +108,7 @@ body {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-size:17px;
+	font-size:25px;
 }
 
 .footer {
