@@ -14,8 +14,14 @@ clearButton.addEventListener('click', () => {
 
 digitButtons.forEach((button) => 
 button.addEventListener('click', () => {
-    if (operator == '') firstArg = parseInt(button.textContent);
-    else secondArg = parseInt(button.textContent);
+    if (operator == '') {
+        firstArg += button.textContent;
+        displayNum(firstArg);
+    }
+    else {
+        secondArg += button.textContent;
+        displayNum(secondArg);
+    }
 }));
 
 operatorButtons.forEach((button) => 
@@ -28,6 +34,10 @@ equalButton.addEventListener('click', () => {
     calculate(firstArg, secondArg, operator);
 });
 
+function displayNum(num) {
+    display.textContent = num;
+}
+
 function clear() {
     firstArg = '';
     secondArg = '';
@@ -36,18 +46,20 @@ function clear() {
 }
 
 function calculate(firstArg, secondArg, operator) {
+    let a = parseInt(firstArg);
+    let b = parseInt(secondArg);
     switch(operator){
         case '+':
-            display.textContent = firstArg + secondArg;
+            displayNum(a + b);
             break;
         case '-':
-            display.textContent = firstArg - secondArg;
+            displayNum(a - b);
             break;
         case '%':
-            display.textContent = firstArg % secondArg;
+            displayNum(a % b);
             break;
         case '*':
-            display.textContent = firstArg * secondArg;
+            displayNum(a * b);
             break;
     }
 }
