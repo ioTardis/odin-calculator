@@ -1,5 +1,6 @@
 let firstArg = '';
 let secondArg = '';
+let resetScreen = false;
 let operator = '';
 
 const digitButtons = document.querySelectorAll('.digit-button');
@@ -19,6 +20,7 @@ deleteButton.addEventListener('click', () => {
 
 digitButtons.forEach((button) => 
 button.addEventListener('click', () => {
+    if (resetScreen) clear();
     if (operator == '') {
         firstArg += button.textContent;
         displayNum(firstArg);
@@ -31,12 +33,19 @@ button.addEventListener('click', () => {
 
 operatorButtons.forEach((button) => 
 button.addEventListener('click', () => {
-    operator = button.textContent;
-    console.log(operator);
+    if (operator == '') {
+        operator = button.textContent;
+    } else {
+        firstArg = calculate(firstArg, secondArg, operator);
+        operator = button.textContent;
+        secondArg = '';
+        displayNum(firstArg);
+    }
 }));
 
 equalButton.addEventListener('click', () => {
-    calculate(firstArg, secondArg, operator);
+    displayNum(calculate(firstArg, secondArg, operator));
+    resetScreen = true;
 });
 
 function displayNum(num) {
@@ -48,6 +57,7 @@ function clear() {
     secondArg = '';
     operator = '';
     display.textContent = '';
+    resetScreen = false;
 }
 
 function deleteDigit() {
@@ -65,21 +75,12 @@ function calculate(firstArg, secondArg, operator) {
     let b = parseInt(secondArg);
     switch(operator){
         case '+':
-            displayNum(a + b);
-            break;
+            return a + b;
         case '-':
-            displayNum(a - b);
-            break;
+            return a - b;
         case '%':
-            let division = Math.floor(a / b * 1000) / 1000;
-            displayNum(division);
-            break;
+            return Math.floor(a / b * 1000) / 1000;
         case '*':
-            displayNum(a * b);
-            break;
+            return a * b;
     }
 }
-
-//add functionality of delete button
-//correct division function
-//add rounding
