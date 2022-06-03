@@ -2,6 +2,7 @@
     font-family: "digital";
     src: url(/digital-7.ttf);
 }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 html, body {
     height: 100%;
@@ -28,6 +29,8 @@ body {
     font-size: 20px;
 }
 
+/*Calculator */
+
 .container {
     display: flex;
     justify-content: center;
@@ -50,7 +53,7 @@ body {
 }
 
 .display {
-    height: 90px;
+    height: 100px;
     width: 400px;
     background-color: #667069;
     margin-top: 20px;
@@ -63,6 +66,8 @@ body {
     justify-content: right;
     align-items: center;
 }
+
+/* Buttons */
 
 .buttons-grid {
     display: grid;
@@ -78,10 +83,16 @@ body {
 	background-color:#792640;
 	border-radius:14px;
 	border:2px solid #531a2c;
+    font-family: 'Open Sans', sans-serif;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-size:25px;
+}
+
+.function-button:hover, #equal:hover{
+    background:linear-gradient(to bottom, #964b63 5%, #a84766 100%);
+	background-color:#a84766;
 }
 
 .operation-button {
@@ -95,15 +106,30 @@ body {
 	font-size:20px;
 }
 
-.digit-button {
+.operation-button:hover {
+    background:linear-gradient(to bottom, #8382d3 5%, #7473c9 100%);
+	background-color:#7473c9;
+}
+
+.digit-button, #point {
     background:linear-gradient(to bottom, #d6e1f0 5%, #a2adbd 100%);
 	background-color:#B1C1D8;
 	border-radius:14px;
 	border:2px solid #7185a1;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-size:25px;
+	color: black;
+	font-size:30px;
+}
+
+.digit-button:hover, #point:hover {
+    background:linear-gradient(to bottom, #ccd2da 5%, #dee3ec 100%);
+	background-color:#abb2bd;
+}
+
+button:active {
+    position:relative;
+	top:1px;
 }
 
 #equal {
@@ -116,6 +142,8 @@ body {
 	color:#ffffff;
 	font-size:25px;
 }
+
+/* Footer */
 
 .footer {
     padding: 15px;

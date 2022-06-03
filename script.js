@@ -9,6 +9,7 @@ const equalButton = document.querySelector('#equal');
 const display = document.querySelector('.display');
 const clearButton = document.querySelector('#clear');
 const deleteButton = document.querySelector('#delete');
+const pointButton = document.querySelector('#point');
 
 clearButton.addEventListener('click', () => {
     clear();
@@ -50,6 +51,18 @@ equalButton.addEventListener('click', () => {
     }
 });
 
+pointButton.addEventListener('click', () => {
+    if (operator == '') {
+        if (!firstArg.search('.')) {
+            firstArg += '.';
+            displayNum(firstArg);
+        }
+    } else if (!secondArg.search('.')) { 
+        secondArg += '.';
+        displayNum(secondArg);
+    } 
+});
+
 function displayNum(num) {
     display.textContent = num;
 }
@@ -73,8 +86,8 @@ function deleteDigit() {
 }
 
 function calculate(firstArg, secondArg, operator) {
-    let a = parseInt(firstArg);
-    let b = parseInt(secondArg);
+    let a = parseFloat(firstArg);
+    let b = parseFloat(secondArg);
     switch(operator){
         case '+':
             return a + b;
