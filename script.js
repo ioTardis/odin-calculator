@@ -44,8 +44,10 @@ button.addEventListener('click', () => {
 }));
 
 equalButton.addEventListener('click', () => {
-    displayNum(calculate(firstArg, secondArg, operator));
-    resetScreen = true;
+    if (firstArg != '' && secondArg != '') {
+        displayNum(calculate(firstArg, secondArg, operator));
+        resetScreen = true;
+    }
 });
 
 function displayNum(num) {
@@ -79,7 +81,9 @@ function calculate(firstArg, secondArg, operator) {
         case '-':
             return a - b;
         case '%':
-            return Math.floor(a / b * 1000) / 1000;
+            if (firstArg != 0 && secondArg != 0 ) {
+                return Math.floor(a / b * 1000) / 1000;
+            } else return "Error";
         case '*':
             return a * b;
     }
