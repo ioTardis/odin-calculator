@@ -88,12 +88,12 @@ function deleteDigit() {
 function calculate(firstArg, secondArg, operator) {
     let a = parseFloat(firstArg);
     let b = parseFloat(secondArg);
-    switch(operator){
+    switch(operator) {
         case '+':
             return a + b;
         case '-':
             return a - b;
-        case '%':
+        case '/':
             if (firstArg != 0 && secondArg != 0 ) {
                 return Math.floor(a / b * 1000) / 1000;
             } else return "Error";
@@ -101,3 +101,36 @@ function calculate(firstArg, secondArg, operator) {
             return a * b;
     }
 }
+
+document.addEventListener('keydown', (event) => {
+    let btn = event.key;
+    if (btn >= 0 || btn <= 9) {
+        if (resetScreen) clear();
+        if (operator == '') {
+            firstArg += btn;
+            displayNum(firstArg);
+        }
+        else {
+            secondArg += btn;
+            displayNum(secondArg);
+        }
+    }
+    if (btn == 'Backspace') deleteDigit();
+    if (btn == '/' || btn == '-' || btn == '+' || btn == '*') {
+        if (operator == '') {
+            operator = btn;
+        } else {
+            firstArg = calculate(firstArg, secondArg, operator);
+            operator = btn;
+            secondArg = '';
+            displayNum(firstArg);
+        }
+    }
+    if (btn == '=') {
+        if (firstArg != '' && secondArg != '') {
+            displayNum(calculate(firstArg, secondArg, operator));
+            resetScreen = true;
+        }
+    }
+    if (btn == 'Delete') clear();
+})
