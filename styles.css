@@ -20,13 +20,7 @@ body {
 
 .header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #2b2d42;
-    margin-bottom: 30px;
-    font-family:'Courier New', Courier, monospace;
-    font-size: 20px;
+    height: 150px;
 }
 
 /*Calculator */
