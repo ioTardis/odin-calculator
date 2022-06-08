@@ -106,10 +106,10 @@ body {
 }
 
 .digit-button, #point {
-    background:linear-gradient(to bottom, #d6e1f0 5%, #a2adbd 100%);
-	background-color:#B1C1D8;
+    background:linear-gradient(to bottom, #eaecf0 5%, #c5cbd4 100%);
+	background-color:#c5cbd4;
 	border-radius:14px;
-	border:2px solid #7185a1;
+	border:2px solid #c5cbd4;
 	display:inline-block;
 	cursor:pointer;
 	color: black;

@@ -3,6 +3,8 @@ let secondArg = '';
 let resetScreen = false;
 let operator = '';
 
+//Selection of elements from DOM
+
 const digitButtons = document.querySelectorAll('.digit-button');
 const operatorButtons = document.querySelectorAll('.operation-button');
 const equalButton = document.querySelector('#equal');
@@ -10,6 +12,8 @@ const display = document.querySelector('.display');
 const clearButton = document.querySelector('#clear');
 const deleteButton = document.querySelector('#delete');
 const pointButton = document.querySelector('#point');
+
+//Buttons event listeners
 
 clearButton.addEventListener('click', () => {
     clear();
@@ -102,6 +106,8 @@ function calculate(firstArg, secondArg, operator) {
     }
 }
 
+//Keyboard support
+
 document.addEventListener('keydown', (event) => {
     let btn = event.key;
     if (btn >= 0 || btn <= 9) {
@@ -133,4 +139,15 @@ document.addEventListener('keydown', (event) => {
         }
     }
     if (btn == 'Delete') clear();
+    if (btn == '.') {
+        if (operator == '') {
+            if (!firstArg.search('.')) {
+                firstArg += '.';
+                displayNum(firstArg);
+            }
+        } else if (!secondArg.search('.')) { 
+            secondArg += '.';
+            displayNum(secondArg);
+        } 
+    }
 })
