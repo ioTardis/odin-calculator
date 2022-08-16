@@ -1,0 +1,25 @@
+{
+  "name": "odin-calculator",
+  "version": "1.0.0",
+  "description": "Calculator created with HTML, CSS and JS as a part of Odin Project path.   Can be used both with keyboard and mouse. Design inspired by [calculator from my childhood](https://images.wbstatic.net/big/new/9180000/9182891-1.jpg)",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ioTardis/odin-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ioTardis/odin-calculator/issues"
+  },
+  "homepage": "https://github.com/ioTardis/odin-calculator#readme",
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
